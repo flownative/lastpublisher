@@ -1,0 +1,18 @@
+.emptyList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: var(--colors-ContrastDarkest);
+    padding: var(--spacing-Half);
+    color: var(--colors-ContrastBrightest);
+
+    svg {
+        margin-right: var(--spacing-Half);
+    }
+}
+
+.headline {
+    font-size: var(--fontSize-Base);
+    font-weight: bold;
+    margin-bottom: var(--spacing-Half);
+}

@@ -1,0 +1,48 @@
+/* css-modules:css-modules://dNI4yA008y_o9ygCpZIDWFxX_XTLSb6B1zJ1jAOMwi8.css */
+.qDLCEG_emptyList {
+  background: var(--colors-ContrastDarkest);
+  padding: var(--spacing-Half);
+  color: var(--colors-ContrastBrightest);
+  flex-direction: row;
+  align-items: center;
+  display: flex;
+  & svg {
+    margin-right: var(--spacing-Half);
+  }
+}
+.qDLCEG_headline {
+  font-size: var(--fontSize-Base);
+  margin-bottom: var(--spacing-Half);
+  font-weight: bold;
+}
+
+/* css-modules:css-modules://kaNtjSPzShyneb9HuNvOjb0K8e16k2FqgGNkBxMhf2g.css */
+.wqZCnW_table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  & tr {
+    background: var(--colors-ContrastDarkest);
+    border-bottom: 1px solid var(--colors-ContrastDark);
+  }
+  & tbody {
+    & tr:last-child {
+      border-bottom: none;
+    }
+  }
+  & th,
+  & td {
+    padding: var(--spacing-Half);
+    color: var(--colors-ContrastBrightest);
+  }
+  & th {
+    text-align: left;
+    font-weight: bold;
+  }
+  & td {
+    font-size: var(--fontSize-Small);
+  }
+  & .wqZCnW_publisherColumn svg {
+    margin-right: var(--spacing-Quarter);
+  }
+}

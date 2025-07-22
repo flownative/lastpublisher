@@ -1,0 +1,20 @@
+{
+    "name": "flownative/lastpublisher",
+    "description": "Package for Neos CMS that logs the last publisher of a node.",
+    "type": "neos-package",
+    "license": "proprietary",
+    "require": {
+        "neos/neos": "^8.3",
+        "neos/neos-ui": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Flownative\\LastPublisher\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Flownative.LastPublisher"
+        }
+    }
+}
