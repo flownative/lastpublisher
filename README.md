@@ -47,3 +47,14 @@ You can customize the number of history entries displayed in the inspector by co
       options:
         maximumItems: 5  # Show only the 5 most recent publishing events
 ```
+
+## Inspector 
+
+With the new PublishingHistoryEditor, we can display the last publishers for the specified node in the backend. This feature will provide a comprehensive overview of the node’s publishing history.
+The icons located in the header and the dates associated with the node are accompanied by informative titles or descriptive labels. These labels enhance the user’s understanding of the node’s status and provide additional details upon hovering over them.
+
+<img width="323" height="198" alt="Inspector for node without publishing history" src="https://github.com/user-attachments/assets/8bfeed60-12f0-4d56-875e-32859ad7cd74" />
+
+View for an empty publishing history:
+
+<img width="320" height="293" alt="Inspector with a history of three items" src="https://github.com/user-attachments/assets/68979d51-9388-4060-9e0f-ffd40cad97e2" />
