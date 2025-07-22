@@ -171,7 +171,7 @@
     "src/components/PublishingHistoryTable.module.css"() {
       "use strict";
       init_2();
-      PublishingHistoryTable_module_default = { "table": "wqZCnW_table", "publisherColumn": "wqZCnW_publisherColumn" };
+      PublishingHistoryTable_module_default = { "publisherColumn": "wqZCnW_publisherColumn", "table": "wqZCnW_table" };
     }
   });
 
@@ -257,7 +257,7 @@
             )));
           }
           const { maximumItems } = options || {};
-          const sortedItems = [...value].sort((a, b) => new Date(a.publishingDate) - new Date(b.publishingDate));
+          const sortedItems = [...value].sort((a, b) => new Date(b.publishingDate) - new Date(a.publishingDate));
           const filteredItems = typeof maximumItems === "number" ? sortedItems.slice(0, maximumItems) : sortedItems;
           return /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement(PublishingHistoryTable_default, { publishingInformations: filteredItems }));
         }

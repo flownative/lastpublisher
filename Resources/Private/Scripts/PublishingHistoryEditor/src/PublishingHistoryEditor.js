@@ -25,7 +25,7 @@ export default class PublishingHistoryEditor extends Component {
         }
 
         const {maximumItems} = options || {};
-        const sortedItems = [...value].sort((a, b) => new Date(a.publishingDate) - new Date(b.publishingDate));
+        const sortedItems = [...value].sort((a, b) => new Date(b.publishingDate) - new Date(a.publishingDate));
         const filteredItems = typeof maximumItems === 'number'
             ? sortedItems.slice(0, maximumItems)
             : sortedItems;
