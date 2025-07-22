@@ -111,19 +111,11 @@
     }
   });
 
-  // css-modules:css-modules://dNI4yA008y_o9ygCpZIDWFxX_XTLSb6B1zJ1jAOMwi8.css
-  var init_ = __esm({
-    "css-modules:css-modules://dNI4yA008y_o9ygCpZIDWFxX_XTLSb6B1zJ1jAOMwi8.css"() {
-    }
-  });
-
-  // src/style.module.css
-  var style_module_default;
-  var init_style_module = __esm({
-    "src/style.module.css"() {
-      "use strict";
-      init_();
-      style_module_default = { "headline": "qDLCEG_headline", "emptyList": "qDLCEG_emptyList" };
+  // node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js
+  var require_neos_ui_decorators = __commonJS({
+    "node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js"(exports, module) {
+      init_readFromConsumerApi();
+      module.exports = readFromConsumerApi("NeosProjectPackages")().NeosUiDecorators;
     }
   });
 
@@ -143,6 +135,22 @@
     }
   });
 
+  // css-modules:css-modules://c3IUVqkfIkslOBU0VnSFI8Kt97vaOs88qmGq2l8Sxq4.css
+  var init_ = __esm({
+    "css-modules:css-modules://c3IUVqkfIkslOBU0VnSFI8Kt97vaOs88qmGq2l8Sxq4.css"() {
+    }
+  });
+
+  // src/style.module.css
+  var style_module_default;
+  var init_style_module = __esm({
+    "src/style.module.css"() {
+      "use strict";
+      init_();
+      style_module_default = { "emptyList": "qDLCEG_emptyList", "headline": "qDLCEG_headline" };
+    }
+  });
+
   // node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/prop-types/index.js
   var require_prop_types = __commonJS({
     "node_modules/@neos-project/neos-ui-extensibility/dist/shims/vendor/prop-types/index.js"(exports, module) {
@@ -151,17 +159,9 @@
     }
   });
 
-  // node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js
-  var require_neos_ui_decorators = __commonJS({
-    "node_modules/@neos-project/neos-ui-extensibility/dist/shims/neosProjectPackages/neos-ui-decorators/index.js"(exports, module) {
-      init_readFromConsumerApi();
-      module.exports = readFromConsumerApi("NeosProjectPackages")().NeosUiDecorators;
-    }
-  });
-
-  // css-modules:css-modules://kaNtjSPzShyneb9HuNvOjb0K8e16k2FqgGNkBxMhf2g.css
+  // css-modules:css-modules://OelMUKaRZfqe4xXmXRJQa0-SvHyERdnGRIjWsvk-CK0.css
   var init_2 = __esm({
-    "css-modules:css-modules://kaNtjSPzShyneb9HuNvOjb0K8e16k2FqgGNkBxMhf2g.css"() {
+    "css-modules:css-modules://OelMUKaRZfqe4xXmXRJQa0-SvHyERdnGRIjWsvk-CK0.css"() {
     }
   });
 
@@ -171,19 +171,18 @@
     "src/components/PublishingHistoryTable.module.css"() {
       "use strict";
       init_2();
-      PublishingHistoryTable_module_default = { "publisherColumn": "wqZCnW_publisherColumn", "table": "wqZCnW_table" };
+      PublishingHistoryTable_module_default = { "table": "wqZCnW_table", "publisherColumn": "wqZCnW_publisherColumn" };
     }
   });
 
   // src/components/PublishingHistoryTable.js
-  var import_react, import_prop_types, import_neos_ui_decorators, import_neos_ui_i18n, import_react_ui_components, PublishingHistoryTable, PublishingHistoryTable_default;
+  var import_react, import_prop_types, import_neos_ui_decorators, import_react_ui_components, PublishingHistoryTable, PublishingHistoryTable_default;
   var init_PublishingHistoryTable = __esm({
     "src/components/PublishingHistoryTable.js"() {
       "use strict";
       import_react = __toESM(require_react());
       import_prop_types = __toESM(require_prop_types());
       import_neos_ui_decorators = __toESM(require_neos_ui_decorators());
-      import_neos_ui_i18n = __toESM(require_neos_ui_i18n());
       import_react_ui_components = __toESM(require_react_ui_components());
       init_PublishingHistoryTable_module();
       PublishingHistoryTable = ({ publishingInformations, i18nRegistry }) => {
@@ -214,6 +213,9 @@
             "Flownative.LastPublisher"
           )
         };
+        if (!publishingInformations || publishingInformations.length === 0) {
+          return null;
+        }
         return /* @__PURE__ */ import_react.default.createElement("table", { className: PublishingHistoryTable_module_default.table }, /* @__PURE__ */ import_react.default.createElement("thead", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("th", { title: labels.publishingDate }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "clock", size: "s" })), /* @__PURE__ */ import_react.default.createElement("th", { title: labels.publisher, className: PublishingHistoryTable_module_default.publisherColumn }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "user", size: "s" }), /* @__PURE__ */ import_react.default.createElement("span", null, labels.publisher)), /* @__PURE__ */ import_react.default.createElement("th", { title: labels.targetWorkspace }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "th-large", size: "s" })))), /* @__PURE__ */ import_react.default.createElement("tbody", null, publishingInformations.map((info, index) => /* @__PURE__ */ import_react.default.createElement("tr", { key: index }, /* @__PURE__ */ import_react.default.createElement("td", { title: formatDate(info.publishingDate, true) }, formatDate(info.publishingDate, false)), /* @__PURE__ */ import_react.default.createElement("td", null, info.publisher), /* @__PURE__ */ import_react.default.createElement("td", null, info.targetWorkspace)))));
       };
       PublishingHistoryTable.propTypes = {
@@ -233,21 +235,22 @@
   });
 
   // src/PublishingHistoryEditor.js
-  var import_react2, import_react_ui_components2, import_neos_ui_i18n2, PublishingHistoryEditor;
+  var import_react2, import_neos_ui_decorators2, import_react_ui_components2, import_neos_ui_i18n, PublishingHistoryEditor, PublishingHistoryEditor_default;
   var init_PublishingHistoryEditor = __esm({
     "src/PublishingHistoryEditor.js"() {
       "use strict";
       import_react2 = __toESM(require_react());
-      init_style_module();
+      import_neos_ui_decorators2 = __toESM(require_neos_ui_decorators());
       import_react_ui_components2 = __toESM(require_react_ui_components());
-      import_neos_ui_i18n2 = __toESM(require_neos_ui_i18n());
+      import_neos_ui_i18n = __toESM(require_neos_ui_i18n());
+      init_style_module();
       init_PublishingHistoryTable();
       PublishingHistoryEditor = class extends import_react2.Component {
         render() {
-          const { value, options } = this.props;
+          const { value, configuration } = this.props;
           if (!Array.isArray(value) || value.length === 0) {
             return /* @__PURE__ */ import_react2.default.createElement("div", { className: style_module_default.emptyList }, /* @__PURE__ */ import_react2.default.createElement(import_react_ui_components2.Icon, { icon: "exclamation-circle", size: "s" }), /* @__PURE__ */ import_react2.default.createElement("span", null, /* @__PURE__ */ import_react2.default.createElement(
-              import_neos_ui_i18n2.default,
+              import_neos_ui_i18n.default,
               {
                 id: "PublishingHistoryEditor.noPublishingHistory",
                 sourceName: "Main",
@@ -256,12 +259,15 @@
               }
             )));
           }
-          const { maximumItems } = options || {};
+          const { maximumItems } = configuration || 5;
           const sortedItems = [...value].sort((a, b) => new Date(b.publishingDate) - new Date(a.publishingDate));
           const filteredItems = typeof maximumItems === "number" ? sortedItems.slice(0, maximumItems) : sortedItems;
           return /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement(PublishingHistoryTable_default, { publishingInformations: filteredItems }));
         }
       };
+      PublishingHistoryEditor_default = (0, import_neos_ui_decorators2.neos)((globalRegistry) => ({
+        configuration: globalRegistry.get("frontendConfiguration").get("Flownative.LastPublisher:PublishingHistoryEditor")
+      }))(PublishingHistoryEditor);
     }
   });
 
@@ -275,7 +281,7 @@
       dist_default("Flownative.LastPublisher:PublishingHistoryEditor", {}, (globalRegistry) => {
         const editorsRegistry = globalRegistry.get("inspector").get("editors");
         editorsRegistry.set("Flownative.LastPublisher/PublishingHistoryEditor", {
-          component: PublishingHistoryEditor
+          component: PublishingHistoryEditor_default
         });
       });
     }

@@ -8,6 +8,10 @@ Neos:
         javascript:
           'Flownative.LastPublisher:PublishingHistoryEditor':
             resource: resource://Flownative.LastPublisher/Public/PublishingHistoryEditor/Plugin.js
+      frontendConfiguration:
+        'Flownative.LastPublisher:PublishingHistoryEditor':
+            # The maximum number of items to show in the publishing history editor
+            maximumItems: '${Configuration.setting("Flownative.LastPublisher.PublishingHistoryEditor.maximumItems")}'
 
     userInterface:
       translation:

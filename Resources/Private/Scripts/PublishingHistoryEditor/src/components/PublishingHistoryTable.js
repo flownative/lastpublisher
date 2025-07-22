@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {neos} from '@neos-project/neos-ui-decorators';
-import I18n from '@neos-project/neos-ui-i18n';
 import {Icon} from '@neos-project/react-ui-components';
 import style from './PublishingHistoryTable.module.css';
 
@@ -34,6 +33,10 @@ const PublishingHistoryTable = ({publishingInformations, i18nRegistry}) => {
             'Flownative.LastPublisher'
         )
     };
+
+    if (!publishingInformations || publishingInformations.length === 0) {
+        return null;
+    }
 
     return (
         <table className={style.table}>

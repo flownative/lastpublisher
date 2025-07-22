@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import style from './style.module.css';
+import {neos} from '@neos-project/neos-ui-decorators';
 import {Icon} from '@neos-project/react-ui-components';
 import I18n from '@neos-project/neos-ui-i18n';
+import style from './style.module.css';
 import PublishingHistoryTable from './components/PublishingHistoryTable';
 
-export default class PublishingHistoryEditor extends Component {
+class PublishingHistoryEditor extends Component {
     render() {
-        const {value, options} = this.props;
-
+        const {value, configuration} = this.props;
         if (!Array.isArray(value) || value.length === 0) {
             return (
                 <div className={style.emptyList}>
@@ -24,7 +24,7 @@ export default class PublishingHistoryEditor extends Component {
             );
         }
 
-        const {maximumItems} = options || {};
+        const {maximumItems} = configuration || 5;
         const sortedItems = [...value].sort((a, b) => new Date(b.publishingDate) - new Date(a.publishingDate));
         const filteredItems = typeof maximumItems === 'number'
             ? sortedItems.slice(0, maximumItems)
@@ -37,3 +37,7 @@ export default class PublishingHistoryEditor extends Component {
         );
     }
 }
+
+export default neos(globalRegistry => ({
+    configuration: globalRegistry.get('frontendConfiguration').get('Flownative.LastPublisher:PublishingHistoryEditor')
+}))(PublishingHistoryEditor);

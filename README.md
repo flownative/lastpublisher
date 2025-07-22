@@ -38,17 +38,14 @@ To enable publishing history tracking for your custom node types, add the `Flown
 
 ### Customizing the History Display
 
-You can customize the number of history entries displayed in the inspector by configuring the editor options:
+You can customize the number of history entries displayed in the inspector by configuring maximumItems.
+The config will be used in the react based PublishingHistoryEditor.
 
 ```yaml
-'Your.Package:YourNodeType':
-  properties:
-    last_publishing_information:
-      ui:
-        inspector
-          editorOptions:
-            # Show only the 5 most recent publishing events
-            maximumItems: 5  
+Flownative:
+  LastPublisher:
+    PublishingHistoryEditor:
+      maximumItems: 3
 ```
 
 ## Inspector 
