@@ -10,9 +10,9 @@
   properties:
     last_publishing_information:
       type: array
+      defaultValue: []
       ui:
         label: i18n
-        defaultValue: []
         inspector:
           editor: 'Flownative.LastPublisher/PublishingHistoryEditor'
           editorOptions:
