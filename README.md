@@ -44,8 +44,11 @@ You can customize the number of history entries displayed in the inspector by co
 'Your.Package:YourNodeType':
   properties:
     last_publishing_information:
-      options:
-        maximumItems: 5  # Show only the 5 most recent publishing events
+      ui:
+        inspector
+          editorOptions:
+            # Show only the 5 most recent publishing events
+            maximumItems: 5  
 ```
 
 ## Inspector 
