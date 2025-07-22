@@ -16,5 +16,7 @@
         inspector:
           editor: 'Flownative.LastPublisher/PublishingHistoryEditor'
           editorOptions:
+            # better would be to use the setting from the package
+            # e.g. '${Configuration.setting(''Flownative.LastPublisher.PublishingHistoryEditor.maximumItems'') ?: 5}'
             maximumItems: 5
           group: 'history'

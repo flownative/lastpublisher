@@ -1,0 +1,17 @@
+Neos:
+  Neos:
+    Ui:
+      resources:
+        stylesheets:
+          'Flownative.LastPublisher:PublishingHistoryEditor':
+            resource: resource://Flownative.LastPublisher/Public/PublishingHistoryEditor/Plugin.css
+        javascript:
+          'Flownative.LastPublisher:PublishingHistoryEditor':
+            resource: resource://Flownative.LastPublisher/Public/PublishingHistoryEditor/Plugin.js
+
+    userInterface:
+      translation:
+        autoInclude:
+          Flownative.LastPublisher:
+            - 'NodeTypes/Mixin/*'
+            - Main
