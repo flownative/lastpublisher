@@ -16,7 +16,7 @@ class PublishingHistoryEditor extends Component {
                         <I18n
                             id="PublishingHistoryEditor.noPublishingHistory"
                             sourceName="Main"
-                            packageKey="Flownative.LastPublisher"
+                            packageKey="Flownative.Neos.LastPublisher"
                             fallback="The Element has no publishing history entries."
                         />
                     </span>
@@ -39,5 +39,5 @@ class PublishingHistoryEditor extends Component {
 }
 
 export default neos(globalRegistry => ({
-    configuration: globalRegistry.get('frontendConfiguration').get('Flownative.LastPublisher:PublishingHistoryEditor')
+    configuration: globalRegistry.get('frontendConfiguration').get('Flownative.Neos.LastPublisher:PublishingHistoryEditor')
 }))(PublishingHistoryEditor);

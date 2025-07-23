@@ -1,4 +1,4 @@
-'Flownative.LastPublisher:Mixin.LastPublisher':
+'Flownative.Neos.LastPublisher:Mixin.LastPublisher':
   abstract: true
   ui:
     inspector:
@@ -15,5 +15,5 @@
       ui:
         label: i18n
         inspector:
-          editor: 'Flownative.LastPublisher/PublishingHistoryEditor'
+          editor: 'Flownative.Neos.LastPublisher/PublishingHistoryEditor'
           group: 'history'

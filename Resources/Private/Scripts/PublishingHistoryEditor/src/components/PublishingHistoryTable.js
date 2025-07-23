@@ -16,21 +16,21 @@ const PublishingHistoryTable = ({publishingInformations, i18nRegistry}) => {
             'Publishing Date',
             [],
             'Main',
-            'Flownative.LastPublisher'
+            'Flownative.Neos.LastPublisher'
         ),
         publisher: i18nRegistry.translate(
             'PublishingHistoryEditor.publishingHistoryTable.publisher',
             'Publisher',
             [],
             'Main',
-            'Flownative.LastPublisher'
+            'Flownative.Neos.LastPublisher'
         ),
         targetWorkspace: i18nRegistry.translate(
             'PublishingHistoryEditor.publishingHistoryTable.targetWorkspace',
             'Target Workspace',
             [],
             'Main',
-            'Flownative.LastPublisher'
+            'Flownative.Neos.LastPublisher'
         )
     };
 

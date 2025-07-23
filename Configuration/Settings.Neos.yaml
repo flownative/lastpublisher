@@ -3,19 +3,19 @@ Neos:
     Ui:
       resources:
         stylesheets:
-          'Flownative.LastPublisher:PublishingHistoryEditor':
-            resource: resource://Flownative.LastPublisher/Public/PublishingHistoryEditor/Plugin.css
+          'Flownative.Neos.LastPublisher:PublishingHistoryEditor':
+            resource: resource://Flownative.Neos.LastPublisher/Public/PublishingHistoryEditor/Plugin.css
         javascript:
-          'Flownative.LastPublisher:PublishingHistoryEditor':
-            resource: resource://Flownative.LastPublisher/Public/PublishingHistoryEditor/Plugin.js
+          'Flownative.Neos.LastPublisher:PublishingHistoryEditor':
+            resource: resource://Flownative.Neos.LastPublisher/Public/PublishingHistoryEditor/Plugin.js
       frontendConfiguration:
-        'Flownative.LastPublisher:PublishingHistoryEditor':
+        'Flownative.Neos.LastPublisher:PublishingHistoryEditor':
             # The maximum number of items to show in the publishing history editor
-            maximumItems: '${Configuration.setting("Flownative.LastPublisher.PublishingHistoryEditor.maximumItems")}'
+            maximumItems: '${Configuration.setting("Flownative.Neos.LastPublisher.PublishingHistoryEditor.maximumItems")}'
 
     userInterface:
       translation:
         autoInclude:
-          Flownative.LastPublisher:
+          Flownative.Neos.LastPublisher:
             - 'NodeTypes/Mixin/*'
             - Main

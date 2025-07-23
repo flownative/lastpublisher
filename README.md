@@ -15,24 +15,24 @@ This package for [Neos CMS](https://www.neos.io) allows you to track and display
 
 ## Installation
 
-The Flownative Last Publisher package is installed as a regular Neos package via Composer. Simply include `flownative/lastpublisher` into the dependencies of your Flow or Neos distribution:
+The Flownative Last Publisher package is installed as a regular Neos package via Composer. Simply include `flownative/neos-lastpublisher` into the dependencies of your Flow or Neos distribution:
 
 ```bash
-$ composer require flownative/lastpublisher
+$ composer require flownative/neos-lastpublisher
 ```
 
 ## Configuration
 
-After installation, the package works out of the box without additional configuration. The publishing history is automatically tracked for all content elements that use the `Flownative.LastPublisher:Mixin.LastPublisher` mixin.
+After installation, the package works out of the box without additional configuration. The publishing history is automatically tracked for all content elements that use the `Flownative.Neos.LastPublisher:Mixin.LastPublisher` mixin.
 
 ### Adding the Mixin to Your NodeTypes
 
-To enable publishing history tracking for your custom node types, add the `Flownative.LastPublisher:Mixin.LastPublisher` mixin to your node type definition:
+To enable publishing history tracking for your custom node types, add the `Flownative.Neos.LastPublisher:Mixin.LastPublisher` mixin to your node type definition:
 
 ```yaml
 'Your.Package:YourNodeType':
   superTypes:
-    'Flownative.LastPublisher:Mixin.LastPublisher': true
+    'Flownative.Neos.LastPublisher:Mixin.LastPublisher': true
   # ... your node type configuration
 ```
 

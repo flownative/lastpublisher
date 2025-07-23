@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Flownative\LastPublisher\Service;
+namespace Flownative\Neos\LastPublisher\Service;
 
 /*
- * This file is part of the Flownative.LastPublisher package.
+ * This file is part of the Flownative.Neos.LastPublisher package.
  */
 
 use Neos\ContentRepository\Exception\NodeException;
@@ -40,7 +40,7 @@ final class PublishingService
     protected UserService $userService;
 
     /**
-     * @Flow\InjectConfiguration(package="Flownative.LastPublisher", path="PublishingHistoryEditor.maximumItems")
+     * @Flow\InjectConfiguration(package="Flownative.Neos.LastPublisher", path="PublishingHistoryEditor.maximumItems")
      * @var integer
      */
     protected $maximumItems;
@@ -89,7 +89,7 @@ final class PublishingService
     public function appendLastPublisherForNode(NodeInterface $node, ?Workspace $targetWorkspace = null, string $publisherName = ''): void
     {
         $nodeType = $node->getNodeType();
-        if ($nodeType->isOfType('Flownative.LastPublisher:Mixin.LastPublisher')) {
+        if ($nodeType->isOfType('Flownative.Neos.LastPublisher:Mixin.LastPublisher')) {
             $publishingInfo = $node->getProperty('last_publishing_information') ?: [];
             $publishingInfo[] = [
                 'targetWorkspace' => $targetWorkspace->getTitle(),

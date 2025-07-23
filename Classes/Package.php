@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Flownative\LastPublisher;
+namespace Flownative\Neos\LastPublisher;
 
 /*
- * This file is part of the Flownative.LastPublisher package.
+ * This file is part of the Flownative.Neos.LastPublisher package.
  */
 
 use Neos\Flow\Package\Package as BasePackage;
 use Neos\Flow\Core\Bootstrap;
 use Neos\ContentRepository\Domain\Model\Workspace;
-use Flownative\LastPublisher\Service\PublishingService as LastPublisherPublishingServiceService;
+use Flownative\Neos\LastPublisher\Service\PublishingService as LastPublisherPublishingServiceService;
 
 class Package extends BasePackage
 {

@@ -1,4 +1,5 @@
 Flownative:
-  LastPublisher:
-    PublishingHistoryEditor:
-      maximumItems: 5
+  Neos:
+    LastPublisher:
+      PublishingHistoryEditor:
+        maximumItems: 5

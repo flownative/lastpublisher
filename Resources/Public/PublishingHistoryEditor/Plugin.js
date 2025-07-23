@@ -135,9 +135,9 @@
     }
   });
 
-  // css-modules:css-modules://c3IUVqkfIkslOBU0VnSFI8Kt97vaOs88qmGq2l8Sxq4.css
+  // css-modules:css-modules://VyejTq87ByKKLmLZpidL448YDhbC8bTRgReWoel-CC0.css
   var init_ = __esm({
-    "css-modules:css-modules://c3IUVqkfIkslOBU0VnSFI8Kt97vaOs88qmGq2l8Sxq4.css"() {
+    "css-modules:css-modules://VyejTq87ByKKLmLZpidL448YDhbC8bTRgReWoel-CC0.css"() {
     }
   });
 
@@ -159,9 +159,9 @@
     }
   });
 
-  // css-modules:css-modules://OelMUKaRZfqe4xXmXRJQa0-SvHyERdnGRIjWsvk-CK0.css
+  // css-modules:css-modules://P9y6Qm4HaUE1zioNEREI8rpGH6mAzUaFaolJLBbMbXU.css
   var init_2 = __esm({
-    "css-modules:css-modules://OelMUKaRZfqe4xXmXRJQa0-SvHyERdnGRIjWsvk-CK0.css"() {
+    "css-modules:css-modules://P9y6Qm4HaUE1zioNEREI8rpGH6mAzUaFaolJLBbMbXU.css"() {
     }
   });
 
@@ -196,21 +196,21 @@
             "Publishing Date",
             [],
             "Main",
-            "Flownative.LastPublisher"
+            "Flownative.Neos.LastPublisher"
           ),
           publisher: i18nRegistry.translate(
             "PublishingHistoryEditor.publishingHistoryTable.publisher",
             "Publisher",
             [],
             "Main",
-            "Flownative.LastPublisher"
+            "Flownative.Neos.LastPublisher"
           ),
           targetWorkspace: i18nRegistry.translate(
             "PublishingHistoryEditor.publishingHistoryTable.targetWorkspace",
             "Target Workspace",
             [],
             "Main",
-            "Flownative.LastPublisher"
+            "Flownative.Neos.LastPublisher"
           )
         };
         if (!publishingInformations || publishingInformations.length === 0) {
@@ -254,7 +254,7 @@
               {
                 id: "PublishingHistoryEditor.noPublishingHistory",
                 sourceName: "Main",
-                packageKey: "Flownative.LastPublisher",
+                packageKey: "Flownative.Neos.LastPublisher",
                 fallback: "The Element has no publishing history entries."
               }
             )));
@@ -266,7 +266,7 @@
         }
       };
       PublishingHistoryEditor_default = (0, import_neos_ui_decorators2.neos)((globalRegistry) => ({
-        configuration: globalRegistry.get("frontendConfiguration").get("Flownative.LastPublisher:PublishingHistoryEditor")
+        configuration: globalRegistry.get("frontendConfiguration").get("Flownative.Neos.LastPublisher:PublishingHistoryEditor")
       }))(PublishingHistoryEditor);
     }
   });
@@ -278,9 +278,9 @@
       "use strict";
       init_dist();
       init_PublishingHistoryEditor();
-      dist_default("Flownative.LastPublisher:PublishingHistoryEditor", {}, (globalRegistry) => {
+      dist_default("Flownative.Neos.LastPublisher:PublishingHistoryEditor", {}, (globalRegistry) => {
         const editorsRegistry = globalRegistry.get("inspector").get("editors");
-        editorsRegistry.set("Flownative.LastPublisher/PublishingHistoryEditor", {
+        editorsRegistry.set("Flownative.Neos.LastPublisher/PublishingHistoryEditor", {
           component: PublishingHistoryEditor_default
         });
       });
