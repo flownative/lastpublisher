@@ -42,7 +42,10 @@
   & td {
     font-size: var(--fontSize-Small);
   }
-  & .wqZCnW_publisherColumn svg {
+  & th.wqZCnW_publisherColumn svg {
     margin-right: var(--spacing-Quarter);
+  }
+  & td.wqZCnW_publisherColumn {
+    word-break: break-all;
   }
 }

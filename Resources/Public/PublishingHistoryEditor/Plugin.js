@@ -147,7 +147,7 @@
     "src/style.module.css"() {
       "use strict";
       init_();
-      style_module_default = { "headline": "qDLCEG_headline", "emptyList": "qDLCEG_emptyList" };
+      style_module_default = { "emptyList": "qDLCEG_emptyList", "headline": "qDLCEG_headline" };
     }
   });
 
@@ -213,12 +213,13 @@
         if (!publishingInformations || publishingInformations.length === 0) {
           return null;
         }
-        return /* @__PURE__ */ import_react.default.createElement("table", { className: PublishingHistoryTable_module_default.table }, /* @__PURE__ */ import_react.default.createElement("thead", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("th", { title: labels.publishingDate }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "clock", size: "s" })), /* @__PURE__ */ import_react.default.createElement("th", { title: labels.publisher, className: PublishingHistoryTable_module_default.publisherColumn }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "user", size: "s" }), /* @__PURE__ */ import_react.default.createElement("span", null, labels.publisher)), /* @__PURE__ */ import_react.default.createElement("th", { title: labels.targetWorkspace }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "th-large", size: "s" })))), /* @__PURE__ */ import_react.default.createElement("tbody", null, publishingInformations.map((info, index) => /* @__PURE__ */ import_react.default.createElement("tr", { key: index }, /* @__PURE__ */ import_react.default.createElement("td", { title: formatDate(info.publishingDate, true) }, formatDate(info.publishingDate, false)), /* @__PURE__ */ import_react.default.createElement("td", null, info.publisher), /* @__PURE__ */ import_react.default.createElement("td", null, info.targetWorkspace)))));
+        return /* @__PURE__ */ import_react.default.createElement("table", { className: PublishingHistoryTable_module_default.table }, /* @__PURE__ */ import_react.default.createElement("thead", null, /* @__PURE__ */ import_react.default.createElement("tr", null, /* @__PURE__ */ import_react.default.createElement("th", { title: labels.publishingDate }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "clock", size: "s" })), /* @__PURE__ */ import_react.default.createElement("th", { title: labels.publisher, className: PublishingHistoryTable_module_default.publisherColumn }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "user", size: "s" }), /* @__PURE__ */ import_react.default.createElement("span", null, labels.publisher)), /* @__PURE__ */ import_react.default.createElement("th", { title: labels.targetWorkspace }, /* @__PURE__ */ import_react.default.createElement(import_react_ui_components.Icon, { icon: "th-large", size: "s" })))), /* @__PURE__ */ import_react.default.createElement("tbody", null, publishingInformations.map((info, index) => /* @__PURE__ */ import_react.default.createElement("tr", { key: index }, /* @__PURE__ */ import_react.default.createElement("td", { title: formatDate(info.publishingDate, true) }, formatDate(info.publishingDate, false)), /* @__PURE__ */ import_react.default.createElement("td", { title: info.publisherId, className: PublishingHistoryTable_module_default.publisherColumn }, info.publisherName), /* @__PURE__ */ import_react.default.createElement("td", null, info.targetWorkspace)))));
       };
       PublishingHistoryTable.propTypes = {
         publishingInformations: import_prop_types.default.arrayOf(
           import_prop_types.default.shape({
-            publisher: import_prop_types.default.string.isRequired,
+            publisherName: import_prop_types.default.string.isRequired,
+            publisherId: import_prop_types.default.string.isRequired,
             targetWorkspace: import_prop_types.default.string.isRequired,
             publishingDate: import_prop_types.default.string.isRequired
           })

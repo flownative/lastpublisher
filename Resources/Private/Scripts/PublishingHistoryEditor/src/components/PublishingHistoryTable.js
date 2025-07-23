@@ -57,7 +57,7 @@ const PublishingHistoryTable = ({publishingInformations, i18nRegistry}) => {
                     <td title={formatDate(info.publishingDate, true)}>
                         {formatDate(info.publishingDate, false)}
                     </td>
-                    <td>{info.publisher}</td>
+                    <td title={info.publisherId} className={style.publisherColumn}>{info.publisherName}</td>
                     <td>{info.targetWorkspace}</td>
                 </tr>
             ))}
@@ -69,7 +69,8 @@ const PublishingHistoryTable = ({publishingInformations, i18nRegistry}) => {
 PublishingHistoryTable.propTypes = {
     publishingInformations: PropTypes.arrayOf(
         PropTypes.shape({
-            publisher: PropTypes.string.isRequired,
+            publisherName: PropTypes.string.isRequired,
+            publisherId: PropTypes.string.isRequired,
             targetWorkspace: PropTypes.string.isRequired,
             publishingDate: PropTypes.string.isRequired
         })

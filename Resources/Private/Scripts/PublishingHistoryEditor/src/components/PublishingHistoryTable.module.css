@@ -28,7 +28,11 @@
         font-size: var(--fontSize-Small);
     }
 
-    .publisherColumn svg {
+    th.publisherColumn svg {
         margin-right: var(--spacing-Quarter);
+    }
+
+    td.publisherColumn {
+        word-break: break-all;
     }
 }

@@ -7,6 +7,7 @@ use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\ContentRepository\Domain\Model\Workspace;
 use Neos\ContentRepository\Exception\NodeException;
 use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Log\ThrowableStorageInterface;
 use Neos\Neos\Service\PublishingService as NeosPublishingService;
 use Neos\Neos\Service\UserService;
 use Psr\Log\LoggerInterface;
@@ -16,6 +17,9 @@ final class PublishingService
 {
     #[Flow\Inject]
     protected NeosPublishingService $publishingService;
+
+    #[Flow\Inject]
+    protected ThrowableStorageInterface $throwableStorage;
 
     #[Flow\Inject]
     protected LoggerInterface $logger;
@@ -36,7 +40,12 @@ final class PublishingService
         }
 
         $currentUser = $this->userService->getBackendUser();
-        $this->appendLastPublisherForNode($node, $targetWorkspace, $currentUser->getName()->getFullName());
+        $publisherName = $currentUser?->getName()->getFullName() ?: 'n/a';
+        try {
+            $this->appendLastPublisherForNode($node, $targetWorkspace, $publisherName);
+        } catch (NodeException $e) {
+            $this->logger->warning($this->throwableStorage->logThrowable($e));
+        }
     }
 
     /**
@@ -45,14 +54,15 @@ final class PublishingService
      * @throws NodeException
      * @throws \Exception
      */
-    public function appendLastPublisherForNode(NodeInterface $node, Workspace $targetWorkspace, string $publisherName = ''): void
+    public function appendLastPublisherForNode(NodeInterface $node, Workspace $targetWorkspace, string $publisherName = '', string $publisherId = ''): void
     {
         $nodeType = $node->getNodeType();
         if ($nodeType->isOfType('Flownative.Neos.LastPublisher:Mixin.LastPublisher')) {
             $publishingInfo = $node->getProperty('last_publishing_information') ?: [];
             $publishingInfo[] = [
                 'targetWorkspace' => $targetWorkspace->getTitle(),
-                'publisher' => $publisherName,
+                'publisherName' => $publisherName,
+                'publisherId' => $publisherId,
                 'publishingDate' => (new \DateTime())->format('c')
             ];
 
