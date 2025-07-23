@@ -3,74 +3,36 @@ declare(strict_types=1);
 
 namespace Flownative\Neos\LastPublisher\Service;
 
-/*
- * This file is part of the Flownative.Neos.LastPublisher package.
- */
-
-use Neos\ContentRepository\Exception\NodeException;
-use Neos\Flow\Annotations as Flow;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\ContentRepository\Domain\Model\Workspace;
-use Neos\Neos\Domain\Model\User;
+use Neos\ContentRepository\Exception\NodeException;
+use Neos\Flow\Annotations as Flow;
 use Neos\Neos\Service\PublishingService as NeosPublishingService;
 use Neos\Neos\Service\UserService;
 use Psr\Log\LoggerInterface;
 
-/**
- * @Flow\Scope("singleton")
- */
+#[Flow\Scope('singleton')]
 final class PublishingService
 {
-    /**
-     * @Flow\Inject
-     * @var NeosPublishingService
-     */
+    #[Flow\Inject]
     protected NeosPublishingService $publishingService;
 
-    /**
-     * @Flow\Inject
-     * @var LoggerInterface
-     */
+    #[Flow\Inject]
     protected LoggerInterface $logger;
 
-    /**
-     * @Flow\Inject
-     * @var UserService
-     */
+    #[Flow\Inject]
     protected UserService $userService;
 
-    /**
-     * @Flow\InjectConfiguration(package="Flownative.Neos.LastPublisher", path="PublishingHistoryEditor.maximumItems")
-     * @var integer
-     */
-    protected $maximumItems;
+    #[Flow\InjectConfiguration(path: 'PublishingHistoryEditor.maximumItems', package: 'Flownative.Neos.LastPublisher')]
+    protected int $maximumItems;
 
     /**
-     * Publishes the given node to the specified target workspace. If no workspace is specified, the base workspace
-     * is assumed.
-     *
-     * If the given node is a Document or has ContentCollection child nodes, these nodes are published as well.
-     *
-     * @param NodeInterface $node
-     * @param Workspace|null $targetWorkspace If not set the base workspace is assumed to be the publishing target
-     * @return void
-     * @api
+     * Used as a slot upon node publishing, see \Flownative\Neos\LastPublisher\Package::boot()
      */
-    public function persistLastPublisherForNode(NodeInterface $node, ?Workspace $targetWorkspace = null)
+    public function persistLastPublisherForNode(NodeInterface $node, ?Workspace $targetWorkspace = null): void
     {
         if ($targetWorkspace === null) {
             $targetWorkspace = $node->getWorkspace()->getBaseWorkspace();
-        }
-
-        if ($this->userService === null) {
-            $this->logger->warning(
-                'UserService is not available, cannot persist last publishing information for node "{nodeIdentifier}" in workspace "{workspaceName}".',
-                [
-                    'nodeIdentifier' => $node->getNodeAggregateIdentifier(),
-                    'workspaceName' => $targetWorkspace->getName()
-                ]
-            );
-            return;
         }
 
         $currentUser = $this->userService->getBackendUser();
@@ -80,13 +42,10 @@ final class PublishingService
     /**
      * Appends the last publisher information to the node's properties.
      *
-     * @param NodeInterface $node
-     * @param Workspace|null $targetWorkspace
-     * @param string $publisherName
-     * @return void
      * @throws NodeException
+     * @throws \Exception
      */
-    public function appendLastPublisherForNode(NodeInterface $node, ?Workspace $targetWorkspace = null, string $publisherName = ''): void
+    public function appendLastPublisherForNode(NodeInterface $node, Workspace $targetWorkspace, string $publisherName = ''): void
     {
         $nodeType = $node->getNodeType();
         if ($nodeType->isOfType('Flownative.Neos.LastPublisher:Mixin.LastPublisher')) {

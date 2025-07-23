@@ -1,26 +1,17 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 namespace Flownative\Neos\LastPublisher;
 
-/*
- * This file is part of the Flownative.Neos.LastPublisher package.
- */
-
-use Neos\Flow\Package\Package as BasePackage;
-use Neos\Flow\Core\Bootstrap;
 use Neos\ContentRepository\Domain\Model\Workspace;
-use Flownative\Neos\LastPublisher\Service\PublishingService as LastPublisherPublishingServiceService;
+use Neos\Flow\Core\Bootstrap;
+use Neos\Flow\Package\Package as BasePackage;
 
 class Package extends BasePackage
 {
-
-    /**
-     * @param Bootstrap $bootstrap
-     * @return void
-     */
-    public function boot(Bootstrap $bootstrap)
+    public function boot(Bootstrap $bootstrap): void
     {
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
-        $dispatcher->connect(Workspace::class, 'beforeNodePublishing', LastPublisherPublishingServiceService::class, 'persistLastPublisherForNode', false);
+        $dispatcher->connect(Workspace::class, 'beforeNodePublishing', Service\PublishingService::class, 'persistLastPublisherForNode', false);
     }
 }
