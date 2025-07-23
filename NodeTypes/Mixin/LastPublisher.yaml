@@ -5,7 +5,8 @@
       groups:
         history:
           label: i18n
-          position: 5
+          tab: meta
+          position: 'before visibility'
           icon: 'history'
   properties:
     last_publishing_information:
