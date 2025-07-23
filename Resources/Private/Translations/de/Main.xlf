@@ -3,7 +3,7 @@
     <file original="" product-name="Flownative.Neos.LastPublisher" source-language="en" datatype="plaintext" target-language="de">
         <body>
             <trans-unit id="PublishingHistoryEditor.noPublishingHistory" xml:space="preserve" approved="yes">
-                <source>The Element has no publishing history entries.</source>
+                <source>The element has no publishing history entries.</source>
                 <target xml:lang="de">Das Element hat keine Einträge in der Veröffentlichungshistorie.</target>
             </trans-unit>
             <trans-unit id="PublishingHistoryEditor.publishingHistoryTable.publisher" xml:space="preserve" approved="yes">
